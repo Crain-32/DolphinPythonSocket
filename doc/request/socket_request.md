@@ -39,7 +39,8 @@ Reserved for the API Spec to use.
 
 ### Transaction ID
 
-Two bytes used to coordinate the [response](../response/socket_response.md) back to the client.
+Two bytes used to coordinate the [response](../response/socket_response.md) back to the client. 
+Must be non-zero. Attempting to register multiple requests with the same Transaction ID will fail. 
 
 ### Padding
 
@@ -48,5 +49,13 @@ This byte is ignored, but `0x00` is recommended.
 
 ## Example Header
 
-`01 02 XX 01` </br>
-`XX 31 21 23`
+`01 02 05 01` </br>
+`00 31 21 23` </br>
+Breakdown
+- `0x01` : Protocol Version 1
+- `0x02` : Statistics API Requested
+- `0x05` : Get Current Frame
+- `0x01` : API Version 1.0
+- `0x00` : Statistics API doesn't use this field for Get Current Frame.
+- `0x31 0x21` : Transaction ID of `0x3121`
+- `0x23` : Non-Zero Padding.
