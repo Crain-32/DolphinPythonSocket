@@ -6,7 +6,7 @@ All inbound requests must have the following header format (Each Cell is a Byte)
 | 0x0              | 0x01           | 0x02                    | 0x03        | 
 |:-----------------|:---------------|:------------------------|:------------|
 | Protocol Version | Requested API  | Requested API Operation | API Version |
-| API Specific     | Transaction ID | Transaction ID          | Padding     |
+| Reserved     | Transaction ID | Transaction ID          | Padding     |
 
 ## Format
 
@@ -33,9 +33,9 @@ Dictates the expected Data format after the header, see each specific API's requ
 
 Specifics the API version to use based on each API's spec, if `0x00` we assume to use the Latest. ***This is not recommend!***
 
-### Api Specific
+### Reserved
 
-Reserved for the API Spec to use.
+Reserved for potential future use.
 
 ### Transaction ID
 

@@ -14,10 +14,13 @@ The following Error Codes are defined for now.
 - `0x03` : Invalid API Operation Requested
 - `0x04` : Invalid API Version Requested
 - `0x05` : Duplicate Transaction ID
-- `0x06` : Missing Request Body
-- `0x07` : Reserved for MemoryAPI Errors
-- `0x08` : Reserved for StatisticsAPI Errors
-- `0x09` : Reserved for RegisterAPI Errors
-- `0x10` : Reserved for GraphicsAPI Errors
-- `0x11` : Reserved for GameCubeControllerAPI Errors
-- `0x12` : Reserved for EMUApi Errors
+- `0x06` : Missing or Malformed Request Body
+- `0x07` : Unaligned Request
+- `0x08` : Reserved for MemoryAPI Errors
+- `0x09` : Reserved for StatisticsAPI Errors
+- `0x10` : Reserved for RegisterAPI Errors
+- `0x11` : Reserved for GraphicsAPI Errors
+- `0x12` : Reserved for GameCubeControllerAPI Errors
+- `0x13` : Reserved for EMUApi Errors
+
+The Error Code `0x06` may have additional information, see the API's Error Response Section. 

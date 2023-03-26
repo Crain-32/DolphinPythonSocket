@@ -25,7 +25,7 @@ The `Request` Body will have the following format.
 - Content Length - Length of the following Content Stream in Bytes, with the Padding
 - Content - UTF-8 Encoded String of the absolute Path to the `.sav` file.
   - File Extension is ***REQUIRED***
-- Padding - 0x00 Padding to ensure that the request body is aligned.
+- Padding - 0x00 Padding to ensure that the request body is 4 Byte aligned.
 
 Example <br>
 `0F 43 3A 2F` <br>
