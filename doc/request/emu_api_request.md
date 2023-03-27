@@ -6,7 +6,6 @@ The following values are from the Header.
 
 - Requested API - `0x06`
 - API Version - `0x01` for version `1.0`
-- API Specific - Not used.
 
 ## API Operations
 

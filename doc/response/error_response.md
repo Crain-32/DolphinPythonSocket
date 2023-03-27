@@ -24,3 +24,5 @@ The following Error Codes are defined for now.
 - `0x13` : Reserved for EMUApi Errors
 
 The Error Code `0x06` may have additional information, see the API's Error Response Section. 
+
+[Return to Response](./socket_response.md)

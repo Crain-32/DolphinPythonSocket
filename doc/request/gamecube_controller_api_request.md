@@ -11,10 +11,10 @@ The following values are from the Header.
 
 Many of the Operations will use the following as either input, or in their [Response](../response/gamecube_controller_api_response.md)
 
-| 0x0            | 0x01          | 0x02 | 0x03 |  
-|:---------------|:--------------|:-------------|:-------------|
+| 0x0                 | 0x01                | 0x02                 | 0x03                  |  
+|:--------------------|:--------------------|:---------------------|:----------------------|
 | Left Analog Stick X | Left Analog Stick Y | Right Analog Stick X | Right Analog  Stick Y |
-| Left Trigger | Right Trigger | D Pad / Port | Buttons |
+| Left Trigger        | Right Trigger       | D Pad / Port         | Buttons               |
 
 Left Analog Stick X - Byte value between 0-255
 Left Analog Stick Y - Byte value between 0-255
@@ -53,24 +53,24 @@ Start, Y, and A are pressed.
 
 ## API Operations
 
-### GetCurrentPortNumberOfPoll : ``
+### GetCurrentPortNumberOfPoll : `0x01`
 
 The `Request` Body will ***not*** be parsed, and last controller port polled will be returned.
 
-### SetInputsForPoll : `` // Should be set inputs for port
+### SetInputsForPoll : `0x02` // Should be set inputs for port
 
 The `Request` Body will have the Controller Format. Only ***one*** controller port ***must*** be specified.
 
-### GetInputsForPoll : ``
+### GetInputsForPoll : `0x03`
 
 The `Request` Body will ***not*** be parsed, and the Controller Format of  the last polled controller is returned.
 
-### GetInputsForPreviousFrame : `` // QoL, specify how many controllers can be requested.
+### GetInputsForPreviousFrame : `0x04` // QoL, specify how many controllers can be requested.
 
 The `Request` Body will have the following format.
 
-| 0x0            | 0x01 - 0x03        |
-|:---------------|:--------------|
+| 0x0             | 0x01 - 0x03   |
+|:----------------|:--------------|
 | Controller Port | Content ..... |
 
 Controller Port - Values can be combined.
@@ -79,12 +79,12 @@ Controller Port - Values can be combined.
 - Port 3 : 0x40
 - Port 4 : 0x80
 
-### IsGcControllerInPort : ``// QoL, specify how many controllers can be requested.
+### IsGcControllerInPort : `0x05`// QoL, specify how many controllers can be requested.
 
 The `Request` Body will have the following format.
 
-| 0x0            | 0x01 - 0x03        |
-|:---------------|:--------------|
+| 0x0             | 0x01 - 0x03   |
+|:----------------|:--------------|
 | Controller Port | Content ..... |
 
 Controller Port - Values can be combined.
@@ -94,12 +94,12 @@ Controller Port - Values can be combined.
 - Port 4 : 0x80
 
 
-### IsUsingPort : ``// QoL, specify how many controllers can be requested.
+### IsUsingPort : `0x06` // QoL, specify how many controllers can be requested.
 
 The `Request` Body will have the following format.
 
-| 0x0            | 0x01 - 0x03        |
-|:---------------|:--------------|
+| 0x0             | 0x01 - 0x03   |
+|:----------------|:--------------|
 | Controller Port | Content ..... |
 
 Controller Port - Values can be combined.
@@ -107,3 +107,6 @@ Controller Port - Values can be combined.
 - Port 2 : 0x20
 - Port 3 : 0x40
 - Port 4 : 0x80
+
+
+[Return to Request](./socket_request.md)

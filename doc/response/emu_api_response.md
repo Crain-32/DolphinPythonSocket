@@ -15,3 +15,5 @@ If the Error Code of `0x12` is provided, the following will be appended to the E
 Here are the following Sub-Error Codes
 
 `0x01` The supplied file doesn't exist.
+
+[Return to Response](./socket_response.md)

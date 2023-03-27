@@ -26,3 +26,5 @@ Transaction ID from the original [Request](../request/socket_request.md) header.
 If the value of the Error Code is `0x00`, it's safe to assume at least 4 more bytes exist,
 which may or may not contain more response information, please see the specific 
 API's Spec for precise details.
+
+[Return to Response](./socket_response.md)

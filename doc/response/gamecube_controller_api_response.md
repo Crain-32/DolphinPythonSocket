@@ -4,15 +4,15 @@
 
 Many of the Operations will use the following as either input, or in their [Response](../response/gamecube_controller_api_response.md)
 
-| 0x0            | 0x01          | 0x02 | 0x03 |  
-|:---------------|:--------------|:-------------|:-------------|
+| 0x0                 | 0x01                | 0x02                 | 0x03                  |  
+|:--------------------|:--------------------|:---------------------|:----------------------|
 | Left Analog Stick X | Left Analog Stick Y | Right Analog Stick X | Right Analog  Stick Y |
-| Left Trigger | Right Trigger | D Pad / Port | Buttons |
+| Left Trigger        | Right Trigger       | D Pad / Port         | Buttons               |
 
 Left Analog Stick X - Byte value between 0-255
 Left Analog Stick Y - Byte value between 0-255
-Right Analong Stick X - Byte value between 0-255
-Right Analong Stick Y - Byte value between 0-255
+Right Analog Stick X - Byte value between 0-255
+Right Analog Stick Y - Byte value between 0-255
 Left Trigger - Byte Value between 0-255
 Right Trigger - Byte Value between 0 -255
 D Pad - Values can be combined
@@ -51,8 +51,8 @@ Start, Y, and A are pressed.
 
 The `Response` Body will have the following format.
 
-| 0x0            | 0x01 - 0x03        |
-|:---------------|:--------------|
+| 0x0             | 0x01 - 0x03   |
+|:----------------|:--------------|
 | Controller Port | Content ..... |
 
 Controller Port - Only one value is returned.
@@ -61,23 +61,23 @@ Controller Port - Only one value is returned.
 - Port 3 : 0x40
 - Port 4 : 0x80
 
-### SetInputsForPoll : `` // Should be set inputs for port
+### SetInputsForPoll // Should be set inputs for port
 
 No additional information is returned.
 
-### GetInputsForPoll : ``
+### GetInputsForPoll
 
 The `Response` body is the Controller Format.
 
-### GetInputsForPreviousFrame : `` // QoL, specify how many controllers can be requested.
+### GetInputsForPreviousFrame // QoL, specify how many controllers can be requested.
 
 The `Response` body is a list of Controllers, in no particular order. Use the Port Number Nibble.
-### IsGcControllerInPort : ``// QoL, specify how many controllers can be requested.
+### IsGcControllerInPort // QoL, specify how many controllers can be requested.
 
 The `Response` Body will have the following format.
 
-| 0x0            | 0x01 - 0x03        |
-|:---------------|:--------------|
+| 0x0             | 0x01 - 0x03   |
+|:----------------|:--------------|
 | Controller Port | Content ..... |
 
 Controller Port - Values are the Ports with Controllers.
@@ -87,12 +87,12 @@ Controller Port - Values are the Ports with Controllers.
 - Port 4 : 0x80
 
 `0x00` for no Gamecube Controllers in Ports.
-### IsUsingPort : ``// QoL, specify how many controllers can be requested.
+### IsUsingPort QoL, specify how many controllers can be requested.
 
 The `Response` Body will have the following format.
 
-| 0x0            | 0x01 - 0x03        |
-|:---------------|:--------------|
+| 0x0             | 0x01 - 0x03   |
+|:----------------|:--------------|
 | Controller Port | Content ..... |
 
 Controller Port - Values are the Ports in use.
@@ -114,3 +114,6 @@ If the Error Code of `0x06` is provided, the following will be appended to the E
 Here are the following Sub-Error Codes
 
 `0x01` Missing the Controller Port.
+
+
+[Return to Response](./socket_response.md)
